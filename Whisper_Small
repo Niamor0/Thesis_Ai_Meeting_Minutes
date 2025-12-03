@@ -1,0 +1,167 @@
+class BanglaTranscriber:
+    """Transcribe Bangla audio - MEMORY OPTIMIZED"""
+    
+    def __init__(self, config: Config):
+        self.config = config
+        self.device = self._get_device()
+        self._load_model()
+    
+    def _get_device(self):
+        """Get computation device for transcription"""
+        import torch
+        
+        # Force CPU if configured
+        if self.config.FORCE_CPU_TRANSCRIPTION:
+            logger.info("Using CPU for transcription (memory optimization)")
+            return "cpu"
+        
+        if torch.cuda.is_available():
+            logger.info("Using GPU for transcription")
+            return "cuda"
+        else:
+            logger.info("Using CPU for transcription")
+            return "cpu"
+    
+    def _load_model(self):
+        """Load Whisper model with memory optimization"""
+        try:
+            from transformers import WhisperProcessor, WhisperForConditionalGeneration
+            import torch
+            
+            logger.info(f"Loading model: {self.config.WHISPER_MODEL}")
+            
+            # Load model and processor
+            self.processor = WhisperProcessor.from_pretrained(self.config.WHISPER_MODEL)
+            self.model = WhisperForConditionalGeneration.from_pretrained(
+                self.config.WHISPER_MODEL,
+                torch_dtype=torch.float16 if self.device == "cuda" else torch.float32,
+                low_cpu_mem_usage=True
+            )
+            
+            # Move to device
+            device_obj = torch.device(self.device)
+            self.model.to(device_obj)
+            self.model.eval()
+            
+            # NOTE: forced_decoder_ids removed here as it is handled in generate() now
+            
+            logger.info(f"✓ Loaded: {self.config.WHISPER_MODEL} on {self.device}")
+            
+        except Exception as e:
+            logger.error(f"Failed to load ASR model: {e}")
+            sys.exit(1)
+    
+    def transcribe_segment(self, audio_path: Path, start: float, end: float) -> str:
+        """Transcribe a specific segment with memory management"""
+        import soundfile as sf
+        import torch
+        
+        # Load segment
+        audio, sr = sf.read(str(audio_path), dtype='float32')
+        if audio.ndim > 1:
+            audio = audio.mean(axis=1)
+        
+        start_sample = int(start * sr)
+        end_sample = int(end * sr)
+        segment = audio[start_sample:end_sample]
+        
+        if len(segment) == 0:
+            return ""
+        
+        try:
+            # Clear CUDA cache before processing
+            if self.device == "cuda":
+                torch.cuda.empty_cache()
+                gc.collect()
+            
+            # Prepare audio
+            inputs = self.processor(
+                segment,
+                sampling_rate=16000,
+                return_tensors="pt"
+            )
+            
+            input_features = inputs.input_features.to(self.model.device)
+            
+            # Generate with forced Bengali using modern API
+            with torch.no_grad():
+                predicted_ids = self.model.generate(
+                    input_features,
+                    max_length=448,
+                    num_beams=5,
+                    temperature=0.0,
+                    do_sample=False,
+                    language="bn",       # <--- Explicitly set language here
+                    task="transcribe"    # <--- Explicitly set task here
+                )
+            
+            # Decode
+            transcription = self.processor.batch_decode(
+                predicted_ids,
+                skip_special_tokens=True
+            )[0]
+            
+            text = transcription.strip()
+            cleaned_text = self._clean_bangla_text(text)
+            
+            # Clear memory after each transcription
+            del inputs, input_features, predicted_ids
+            if self.device == "cuda":
+                torch.cuda.empty_cache()
+            gc.collect()
+            
+            return cleaned_text
+            
+        except RuntimeError as e:
+            if "out of memory" in str(e):
+                logger.error(f"OOM Error: {e}")
+                logger.error("Try setting FORCE_CPU_TRANSCRIPTION = True in Config")
+                
+                # Clear memory and retry on CPU
+                if self.device == "cuda":
+                    torch.cuda.empty_cache()
+                    gc.collect()
+                
+                return ""
+            else:
+                logger.error(f"Transcription error: {e}")
+                return ""
+        except Exception as e:
+            logger.error(f"Transcription error: {e}")
+            return ""
+    
+    def _is_bangla_script(self, text: str) -> bool:
+        """Check if text is in Bengali script"""
+        if not text:
+            return False
+        
+        bangla_chars = sum(1 for c in text if '\u0980' <= c <= '\u09FF')
+        total_chars = sum(1 for c in text if c.isalpha())
+        
+        if total_chars == 0:
+            return False
+        
+        return (bangla_chars / total_chars) > 0.7
+    
+    def _clean_bangla_text(self, text: str) -> str:
+        """Clean and validate Bangla text"""
+        import unicodedata
+        import re
+        
+        # Normalize Unicode
+        text = unicodedata.normalize("NFC", text)
+        
+        # Remove excessive whitespace
+        text = re.sub(r'\s+', ' ', text).strip()
+        
+        # Validate script
+        if self._is_bangla_script(text):
+            logger.info(f"✓ Bengali text: {text[:50]}...")
+        else:
+            logger.warning(f"⚠ Non-Bengali detected: {text[:50]}...")
+        
+        # Add Bengali full stop if missing
+        if text and text[-1] not in '।!?।.':
+            text += '।'
+        
+        return text
