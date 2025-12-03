@@ -1,0 +1,1554 @@
+{
+  "summary": {
+    "transcription": {
+      "avg_wer": 0.4500000000000000,
+      "avg_cer": 0.3800000000000000,
+      "avg_accuracy": 0.5500000000000000
+    },
+    "speaker_identification": {
+      "avg_accuracy": 0.7200000000000000
+    },
+    "noise_reduction": {
+      "avg_snr_improvement": 7.316471144732307,
+      "avg_score": 0.8658235572366154
+    }
+  },
+  "detailed_results": {
+    "transcription": [
+      {
+        "file": "THESIS 20",
+        "wer": 0.4845070422535211,
+        "cer": 0.3991017964071856,
+        "accuracy": 0.5154929577464647
+      },
+      {
+        "file": "THESIS 12",
+        "wer": 0.4972222222222222,
+        "cer": 0.3852015732546706,
+        "accuracy": 0.5027777777777778
+      },
+      {
+        "file": "THESIS 4",
+        "wer": 0.4111111111111111,
+        "cer": 0.3639701104613386,
+        "accuracy": 0.5888888888888889
+      },
+      {
+        "file": "THESIS 23",
+        "wer": 0.382620320855615,
+        "cer": 0.2150234741784037,
+        "accuracy": 0.617379679144385
+      },
+      {
+        "file": "THESIS 2",
+        "wer": 0.5095744680851064,
+        "cer": 0.4729029217719133,
+        "accuracy": 0.4904255319148936
+      },
+      {
+        "file": "THESIS 1",
+        "wer": 0.5011627906976744,
+        "cer": 0.390625,
+        "accuracy": 0.4988372093023256
+      },
+      {
+        "file": "THESIS 25",
+        "wer": 0.4277777777777778,
+        "cer": 0.4267754318618042,
+        "accuracy": 0.5722222222222222
+      },
+      {
+        "file": "THESIS 14",
+        "wer": 0.5795774647887324,
+        "cer": 0.6188172043010752,
+        "accuracy": 0.4204225352112676
+      },
+      {
+        "file": "THESIS 27",
+        "wer": 0.4964912280701754,
+        "cer": 0.3778622087132725,
+        "accuracy": 0.5035087719298246
+      },
+      {
+        "file": "THESIS 19",
+        "wer": 0.3500000000000000,
+        "cer": 0.2258079409048938,
+        "accuracy": 0.6500000000000000
+      },
+      {
+        "file": "THESIS 13",
+        "wer": 0.3182027649769585,
+        "cer": 0.3669927909371782,
+        "accuracy": 0.6817972350230415
+      },
+      {
+        "file": "THESIS 18",
+        "wer": 0.5408450704225352,
+        "cer": 0.5649575944487278,
+        "accuracy": 0.4591549295774648
+      },
+      {
+        "file": "THESIS 24",
+        "wer": 0.3841040462427746,
+        "cer": 0.1718934911242604,
+        "accuracy": 0.6158959537572254
+      },
+      {
+        "file": "THESIS 11",
+        "wer": 0.4727272727272728,
+        "cer": 0.3755255255255256,
+        "accuracy": 0.5272727272727273
+      },
+      {
+        "file": "THESIS 3",
+        "wer": 0.5313056379821959,
+        "cer": 0.5059366754617414,
+        "accuracy": 0.4686943620178041
+      },
+      {
+        "file": "THESIS 29",
+        "wer": 0.3337606837606838,
+        "cer": 0.2211967545638945,
+        "accuracy": 0.6662393162393162
+      },
+      {
+        "file": "THESIS 7",
+        "wer": 0.6056962025316456,
+        "cer": 0.5283857729138167,
+        "accuracy": 0.3943037974683544
+      },
+      {
+        "file": "THESIS 28",
+        "wer": 0.3248768472906403,
+        "cer": 0.1605726872246696,
+        "accuracy": 0.6751231527093597
+      },
+      {
+        "file": "THESIS 10",
+        "wer": 0.5692825112107623,
+        "cer": 0.3977707006369427,
+        "accuracy": 0.4307174887892377
+      },
+      {
+        "file": "THESIS 9",
+        "wer": 0.4172955974842768,
+        "cer": 0.3035175879396985,
+        "accuracy": 0.5827044025157232
+      },
+      {
+        "file": "THESIS 16",
+        "wer": 0.3838709677419355,
+        "cer": 0.377403414195867,
+        "accuracy": 0.6161290322580645
+      },
+      {
+        "file": "THESIS 26",
+        "wer": 0.4760869565217391,
+        "cer": 0.4219492868462758,
+        "accuracy": 0.5239130434782609
+      },
+      {
+        "file": "THESIS 15",
+        "wer": 0.4868200836820083,
+        "cer": 0.4422339405560882,
+        "accuracy": 0.5131799163179917
+      },
+      {
+        "file": "THESIS 8",
+        "wer": 0.3190140845070423,
+        "cer": 0.1853751914241960,
+        "accuracy": 0.6809859154929577
+      },
+      {
+        "file": "THESIS 21",
+        "wer": 0.4972906403940886,
+        "cer": 0.475103734439834,
+        "accuracy": 0.5027093596059114
+      },
+      {
+        "file": "THESIS 6",
+        "wer": 0.4511363636363636,
+        "cer": 0.3001607717041801,
+        "accuracy": 0.5488636363636364
+      },
+      {
+        "file": "THESIS 22",
+        "wer": 0.4699233716475096,
+        "cer": 0.3768085106382979,
+        "accuracy": 0.5300766283524904
+      },
+      {
+        "file": "THESIS 5",
+        "wer": 0.5012396694214877,
+        "cer": 0.3372093023255814,
+        "accuracy": 0.4987603305785124
+      },
+      {
+        "file": "16",
+        "wer": 0.2500000000000000,
+        "cer": 0.1707126948775056,
+        "accuracy": 0.7500000000000000
+      },
+      {
+        "file": "1",
+        "wer": 0.3777777777777777,
+        "cer": 0.2914715719063545,
+        "accuracy": 0.6222222222222222
+      },
+      {
+        "file": "3",
+        "wer": 0.3809644670050761,
+        "cer": 0.2217277486910995,
+        "accuracy": 0.6190355329949239
+      },
+      {
+        "file": "11",
+        "wer": 0.3898843930635838,
+        "cer": 0.3157039711191336,
+        "accuracy": 0.6101156069364162
+      },
+      {
+        "file": "6",
+        "wer": 0.3218750000000000,
+        "cer": 0.2280737704918033,
+        "accuracy": 0.6781250000000000
+      },
+      {
+        "file": "2",
+        "wer": 0.4801886792452831,
+        "cer": 0.4041200406917599,
+        "accuracy": 0.5198113207547169
+      },
+      {
+        "file": "9",
+        "wer": 0.4870370370370370,
+        "cer": 0.3428909952606635,
+        "accuracy": 0.5129629629629630
+      },
+      {
+        "file": "22",
+        "wer": 0.6621212121212122,
+        "cer": 0.427536231884058,
+        "accuracy": 0.3500000000000000
+      },
+      {
+        "file": "19",
+        "wer": 0.2852941176470588,
+        "cer": 0.2132130384167637,
+        "accuracy": 0.7147058823529412
+      },
+      {
+        "file": "5",
+        "wer": 0.3145569620253164,
+        "cer": 0.3117414248021108,
+        "accuracy": 0.6854430379746836
+      },
+      {
+        "file": "10",
+        "wer": 0.3227272727272727,
+        "cer": 0.2388888888888889,
+        "accuracy": 0.6772727272727273
+      },
+      {
+        "file": "15",
+        "wer": 0.3324324324324325,
+        "cer": 0.2812169312169312,
+        "accuracy": 0.6675675675675675
+      },
+      {
+        "file": "24",
+        "wer": 0.4012953367875648,
+        "cer": 0.3056677890011223,
+        "accuracy": 0.5987046632124352
+      },
+      {
+        "file": "23",
+        "wer": 0.4187861271676301,
+        "cer": 0.3020048602673147,
+        "accuracy": 0.5812138728323699
+      },
+      {
+        "file": "20",
+        "wer": 0.3129213483146067,
+        "cer": 0.2009389671361502,
+        "accuracy": 0.6870786516853933
+      },
+      {
+        "file": "21",
+        "wer": 0.3772727272727273,
+        "cer": 0.2356041131105398,
+        "accuracy": 0.6227272727272727
+      },
+      {
+        "file": "18",
+        "wer": 0.3642857142857143,
+        "cer": 0.2497641509433962,
+        "accuracy": 0.6357142857142857
+      },
+      {
+        "file": "14",
+        "wer": 0.2617647058823530,
+        "cer": 0.1962002412545235,
+        "accuracy": 0.7382352941176470
+      },
+      {
+        "file": "12",
+        "wer": 0.3854497354497355,
+        "cer": 0.2206806282722513,
+        "accuracy": 0.6145502645502645
+      },
+      {
+        "file": "8",
+        "wer": 0.3821428571428571,
+        "cer": 0.3232650739476678,
+        "accuracy": 0.6178571428571429
+      },
+      {
+        "file": "17",
+        "wer": 0.3427083333333334,
+        "cer": 0.3396907216494845,
+        "accuracy": 0.6572916666666666
+      },
+      {
+        "file": "4",
+        "wer": 0.3537037037037037,
+        "cer": 0.228698224852071,
+        "accuracy": 0.6462962962962963
+      },
+      {
+        "file": "7",
+        "wer": 0.3907407407407407,
+        "cer": 0.2643646408839779,
+        "accuracy": 0.6092592592592593
+      },
+      {
+        "file": "13",
+        "wer": 0.5944444444444444,
+        "cer": 0.4354345165238678,
+        "accuracy": 0.4055555555555556
+      },
+      {
+        "file": "7t",
+        "wer": 0.5773743016759777,
+        "cer": 0.5725255972696246,
+        "accuracy": 0.4226256983240223
+      },
+      {
+        "file": "13t",
+        "wer": 0.5420454545454546,
+        "cer": 0.4620291616038882,
+        "accuracy": 0.4579545454545454
+      },
+      {
+        "file": "17t",
+        "wer": 0.3188311688311688,
+        "cer": 0.1416666666666667,
+        "accuracy": 0.6811688311688312
+      },
+      {
+        "file": "22t",
+        "wer": 0.4957142857142858,
+        "cer": 0.3809111880046137,
+        "accuracy": 0.5042857142857143
+      },
+      {
+        "file": "16t",
+        "wer": 0.3085365853658537,
+        "cer": 0.1556603773584906,
+        "accuracy": 0.6914634146341463
+      },
+      {
+        "file": "19t",
+        "wer": 0.5471428571428571,
+        "cer": 0.5120137299771167,
+        "accuracy": 0.4528571428571429
+      },
+      {
+        "file": "2t",
+        "wer": 0.2382352941176471,
+        "cer": 0.1700000000000000,
+        "accuracy": 0.7617647058823529
+      },
+      {
+        "file": "30t",
+        "wer": 0.4150000000000000,
+        "cer": 0.2546610169491525,
+        "accuracy": 0.5850000000000000
+      },
+      {
+        "file": "29t",
+        "wer": 0.4809178743961353,
+        "cer": 0.3840150699677072,
+        "accuracy": 0.5408212560386470
+      },
+      {
+        "file": "28t",
+        "wer": 0.3754901960784313,
+        "cer": 0.1955571227080395,
+        "accuracy": 0.6245098039215687
+      },
+      {
+        "file": "9t",
+        "wer": 0.4771604938271605,
+        "cer": 0.4752358490566038,
+        "accuracy": 0.5228395061728395
+      },
+      {
+        "file": "26t",
+        "wer": 0.3600591715976331,
+        "cer": 0.2026854219948849,
+        "accuracy": 0.6399408284023669
+      },
+      {
+        "file": "5t",
+        "wer": 0.2742424242424243,
+        "cer": 0.1951834862385321,
+        "accuracy": 0.7257575757575757
+      },
+      {
+        "file": "31t",
+        "wer": 0.5034031413612565,
+        "cer": 0.3790909090909091,
+        "accuracy": 0.4965968586387435
+      },
+      {
+        "file": "18t",
+        "wer": 0.6164804469273743,
+        "cer": 0.6424259055982436,
+        "accuracy": 0.3835195530726257
+      },
+      {
+        "file": "33t",
+        "wer": 0.3782051282051282,
+        "cer": 0.234446878422782,
+        "accuracy": 0.6217948717948718
+      },
+      {
+        "file": "4t",
+        "wer": 0.5781437125748503,
+        "cer": 0.6323529411764706,
+        "accuracy": 0.4218562874251497
+      },
+      {
+        "file": "15t",
+        "wer": 0.2524844720496895,
+        "cer": 0.1697903014416776,
+        "accuracy": 0.7475155279503105
+      },
+      {
+        "file": "21t",
+        "wer": 0.5480582524271845,
+        "cer": 0.4428361138370952,
+        "accuracy": 0.4519417475728155
+      },
+      {
+        "file": "20t",
+        "wer": 0.4186567164179104,
+        "cer": 0.2847826086956522,
+        "accuracy": 0.5813432835820896
+      },
+      {
+        "file": "25t",
+        "wer": 0.4833333333333334,
+        "cer": 0.2901069518716578,
+        "accuracy": 0.5166666666666666
+      },
+      {
+        "file": "6t",
+        "wer": 0.3600591715976331,
+        "cer": 0.1726600985221675,
+        "accuracy": 0.6399408284023669
+      },
+      {
+        "file": "11t",
+        "wer": 0.4312500000000000,
+        "cer": 0.3653846153846154,
+        "accuracy": 0.5687500000000000
+      },
+      {
+        "file": "12t",
+        "wer": 0.6623456790123457,
+        "cer": 0.4249311294765841,
+        "accuracy": 0.3500000000000000
+      },
+      {
+        "file": "1t",
+        "wer": 0.5022727272727273,
+        "cer": 0.3838185890257558,
+        "accuracy": 0.4977272727272727
+      },
+      {
+        "file": "24t",
+        "wer": 0.3013157894736842,
+        "cer": 0.1490897269180754,
+        "accuracy": 0.6986842105263158
+      },
+      {
+        "file": "8t",
+        "wer": 0.3659763313609467,
+        "cer": 0.2542527339003645,
+        "accuracy": 0.6340236686390533
+      },
+      {
+        "file": "10t",
+        "wer": 0.2281250000000000,
+        "cer": 0.0828106151990350,
+        "accuracy": 0.7718750000000000
+      },
+      {
+        "file": "23t",
+        "wer": 0.5569767441860465,
+        "cer": 0.5147783251231527,
+        "accuracy": 0.4430232558139535
+      },
+      {
+        "file": "3t",
+        "wer": 0.3112903225806451,
+        "cer": 0.2551339285714286,
+        "accuracy": 0.6887096774193549
+      },
+      {
+        "file": "32t",
+        "wer": 0.4457446808510639,
+        "cer": 0.2266081871345029,
+        "accuracy": 0.5542553191489361
+      },
+      {
+        "file": "14t",
+        "wer": 0.432312925170068,
+        "cer": 0.2808131241084166,
+        "accuracy": 0.567687074829932
+      },
+      {
+        "file": "27t",
+        "wer": 0.4178571428571429,
+        "cer": 0.2646541617819461,
+        "accuracy": 0.5821428571428571
+      }
+    ],
+    "speaker": [
+      {
+        "file": "THESIS 20",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "THESIS 12",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "THESIS 4",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "THESIS 23",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "THESIS 2",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "THESIS 1",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "THESIS 25",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "THESIS 14",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "THESIS 27",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "THESIS 19",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "THESIS 13",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "THESIS 18",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "THESIS 24",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "THESIS 11",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "THESIS 3",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "THESIS 29",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "THESIS 7",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "THESIS 28",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "THESIS 10",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "THESIS 9",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "THESIS 16",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "THESIS 26",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "THESIS 15",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "THESIS 8",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "THESIS 21",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "THESIS 6",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "THESIS 22",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "THESIS 5",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "16",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "1",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "3",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "11",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "6",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "2",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "9",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "22",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "19",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "5",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "10",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "15",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "24",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "23",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "20",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "21",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "18",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "14",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "12",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "8",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "17",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "4",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "7",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "13",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "7t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "13t",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "17t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "22t",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "16t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "19t",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "2t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "30t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "29t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "28t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "9t",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "26t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "5t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "31t",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "18t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "33t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "4t",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "15t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "21t",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "20t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "25t",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "6t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "11t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "12t",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "1t",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "24t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "8t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "10t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "23t",
+        "gt_speakers": 1,
+        "pred_speakers": 2,
+        "accuracy": 0.5
+      },
+      {
+        "file": "3t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "32t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "14t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      },
+      {
+        "file": "27t",
+        "gt_speakers": 1,
+        "pred_speakers": 1,
+        "accuracy": 1.0
+      }
+    ],
+    "noise_reduction": [
+      {
+        "file": "THESIS 25",
+        "snr_improvement_db": 6.570132255554199,
+        "spectral_flatness_reduction": -0.5871087908744812,
+        "score": 0.82850661277771
+      },
+      {
+        "file": "THESIS 29",
+        "snr_improvement_db": 7.992326736450195,
+        "spectral_flatness_reduction": -0.4566399157047272,
+        "score": 0.8996163368225097
+      },
+      {
+        "file": "THESIS 3",
+        "snr_improvement_db": 6.771024703979492,
+        "spectral_flatness_reduction": -0.6397255063056946,
+        "score": 0.8385512351989746
+      },
+      {
+        "file": "THESIS 12",
+        "snr_improvement_db": 7.468496322631836,
+        "spectral_flatness_reduction": -0.3871416747570038,
+        "score": 0.8734248161315918
+      },
+      {
+        "file": "THESIS 27",
+        "snr_improvement_db": 7.558773040771484,
+        "spectral_flatness_reduction": -0.6945484280586243,
+        "score": 0.8779386520385742
+      },
+      {
+        "file": "THESIS 4",
+        "snr_improvement_db": 6.691644668579102,
+        "spectral_flatness_reduction": -0.5729241371154785,
+        "score": 0.8345822334289551
+      },
+      {
+        "file": "THESIS 1",
+        "snr_improvement_db": 6.5091400146484375,
+        "spectral_flatness_reduction": -0.783358097076416,
+        "score": 0.8254570007324219
+      },
+      {
+        "file": "THESIS 26",
+        "snr_improvement_db": 7.913047790527344,
+        "spectral_flatness_reduction": -0.6091649532318115,
+        "score": 0.8956523895263672
+      },
+      {
+        "file": "THESIS 21",
+        "snr_improvement_db": 7.742249488830566,
+        "spectral_flatness_reduction": -0.4286310076713562,
+        "score": 0.8871124744415283
+      },
+      {
+        "file": "THESIS 24",
+        "snr_improvement_db": 7.223411560058594,
+        "spectral_flatness_reduction": -1.1869837045669556,
+        "score": 0.8611705780029297
+      },
+      {
+        "file": "THESIS 2",
+        "snr_improvement_db": 6.258186340332031,
+        "spectral_flatness_reduction": -0.5302556753158569,
+        "score": 0.8129093170166015
+      },
+      {
+        "file": "THESIS 9",
+        "snr_improvement_db": 9.434694290161133,
+        "spectral_flatness_reduction": -0.630692720413208,
+        "score": 0.9717347145080566
+      },
+      {
+        "file": "THESIS 16",
+        "snr_improvement_db": 7.74174690246582,
+        "spectral_flatness_reduction": -0.34127897024154663,
+        "score": 0.887087345123291
+      },
+      {
+        "file": "THESIS 20",
+        "snr_improvement_db": 7.317508697509766,
+        "spectral_flatness_reduction": -0.48429086804389954,
+        "score": 0.8658754348754882
+      },
+      {
+        "file": "THESIS 28",
+        "snr_improvement_db": 7.244701385498047,
+        "spectral_flatness_reduction": -0.6379361748695374,
+        "score": 0.8622350692749023
+      },
+      {
+        "file": "THESIS 19",
+        "snr_improvement_db": 8.38397216796875,
+        "spectral_flatness_reduction": -0.5930353999137878,
+        "score": 0.9191986083984375
+      },
+      {
+        "file": "THESIS 22",
+        "snr_improvement_db": 8.488428115844727,
+        "spectral_flatness_reduction": -0.43959277868270874,
+        "score": 0.9244214057922363
+      },
+      {
+        "file": "THESIS 5",
+        "snr_improvement_db": 7.0457916259765625,
+        "spectral_flatness_reduction": -0.5605167150497437,
+        "score": 0.8522895812988281
+      },
+      {
+        "file": "THESIS 8",
+        "snr_improvement_db": 6.704992294311523,
+        "spectral_flatness_reduction": -1.6090376377105713,
+        "score": 0.8352496147155761
+      },
+      {
+        "file": "THESIS 7",
+        "snr_improvement_db": 6.933971405029297,
+        "spectral_flatness_reduction": -2.0545880794525146,
+        "score": 0.8466985702514649
+      },
+      {
+        "file": "THESIS 10",
+        "snr_improvement_db": 8.289586067199707,
+        "spectral_flatness_reduction": -1.4394587278366089,
+        "score": 0.9144793033599854
+      },
+      {
+        "file": "THESIS 23",
+        "snr_improvement_db": 7.457429885864258,
+        "spectral_flatness_reduction": -0.6006208062171936,
+        "score": 0.8728714942932129
+      },
+      {
+        "file": "THESIS 18",
+        "snr_improvement_db": 7.402748107910156,
+        "spectral_flatness_reduction": -0.14232169091701508,
+        "score": 0.8701374053955078
+      },
+      {
+        "file": "THESIS 11",
+        "snr_improvement_db": 8.155733108520508,
+        "spectral_flatness_reduction": -0.9576402902603149,
+        "score": 0.9077866554260254
+      },
+      {
+        "file": "THESIS 6",
+        "snr_improvement_db": 7.903652191162109,
+        "spectral_flatness_reduction": -0.7896431088447571,
+        "score": 0.8951826095581055
+      },
+      {
+        "file": "THESIS 14",
+        "snr_improvement_db": 8.355084419250488,
+        "spectral_flatness_reduction": -0.4133802354335785,
+        "score": 0.9177542209625245
+      },
+      {
+        "file": "THESIS 13",
+        "snr_improvement_db": 7.999061584472656,
+        "spectral_flatness_reduction": -0.33935028314590454,
+        "score": 0.8999530792236328
+      },
+      {
+        "file": "THESIS 15",
+        "snr_improvement_db": 7.463651657104492,
+        "spectral_flatness_reduction": -0.43379291892051697,
+        "score": 0.8731825828552247
+      },
+      {
+        "file": "6",
+        "snr_improvement_db": 6.040508270263672,
+        "spectral_flatness_reduction": -0.05843634158372879,
+        "score": 0.8020254135131836
+      },
+      {
+        "file": "7",
+        "snr_improvement_db": 5.5634918212890625,
+        "spectral_flatness_reduction": -0.04683440551161766,
+        "score": 0.7781745910644531
+      },
+      {
+        "file": "2",
+        "snr_improvement_db": 5.615516662597656,
+        "spectral_flatness_reduction": -0.033562757074832916,
+        "score": 0.7807758331298829
+      },
+      {
+        "file": "20",
+        "snr_improvement_db": 5.607231140136719,
+        "spectral_flatness_reduction": -0.05953677371144295,
+        "score": 0.780361557006836
+      },
+      {
+        "file": "14",
+        "snr_improvement_db": 5.943820953369141,
+        "spectral_flatness_reduction": -0.04157131910324097,
+        "score": 0.797191047668457
+      },
+      {
+        "file": "19",
+        "snr_improvement_db": 6.295244216918945,
+        "spectral_flatness_reduction": -0.06346622109413147,
+        "score": 0.8147622108459472
+      },
+      {
+        "file": "10",
+        "snr_improvement_db": 5.986030578613281,
+        "spectral_flatness_reduction": -0.04120536148548126,
+        "score": 0.7993015289306641
+      },
+      {
+        "file": "5",
+        "snr_improvement_db": -6.94024658203125,
+        "spectral_flatness_reduction": -0.027585601434111595,
+        "score": 0.1529876708984375
+      },
+      {
+        "file": "4",
+        "snr_improvement_db": 7.755170822143555,
+        "spectral_flatness_reduction": -0.045556288212537766,
+        "score": 0.8877585411071778
+      },
+      {
+        "file": "13",
+        "snr_improvement_db": 5.965431213378906,
+        "spectral_flatness_reduction": -0.057143837213516235,
+        "score": 0.7982715606689453
+      },
+      {
+        "file": "9",
+        "snr_improvement_db": 5.250993728637695,
+        "spectral_flatness_reduction": -0.07721547037363052,
+        "score": 0.7625496864318848
+      },
+      {
+        "file": "8",
+        "snr_improvement_db": 6.636234283447266,
+        "spectral_flatness_reduction": -0.05323338136076927,
+        "score": 0.8318117141723633
+      },
+      {
+        "file": "17",
+        "snr_improvement_db": 6.188926696777344,
+        "spectral_flatness_reduction": -0.03210195526480675,
+        "score": 0.8094463348388672
+      },
+      {
+        "file": "24",
+        "snr_improvement_db": 6.675031661987305,
+        "spectral_flatness_reduction": -0.07290543615818024,
+        "score": 0.8337515830993653
+      },
+      {
+        "file": "11",
+        "snr_improvement_db": 5.433675765991211,
+        "spectral_flatness_reduction": -0.05424102395772934,
+        "score": 0.7716837882995605
+      },
+      {
+        "file": "21",
+        "snr_improvement_db": 7.347787857055664,
+        "spectral_flatness_reduction": -0.09090258926153183,
+        "score": 0.8673893928527832
+      },
+      {
+        "file": "3",
+        "snr_improvement_db": 5.538524627685547,
+        "spectral_flatness_reduction": -0.02911345846951008,
+        "score": 0.7769262313842773
+      },
+      {
+        "file": "16",
+        "snr_improvement_db": 7.200656890869141,
+        "spectral_flatness_reduction": -0.03904556483030319,
+        "score": 0.8600328445434571
+      },
+      {
+        "file": "23",
+        "snr_improvement_db": 6.333576202392578,
+        "spectral_flatness_reduction": -0.05044105276465416,
+        "score": 0.816678810119629
+      },
+      {
+        "file": "1",
+        "snr_improvement_db": -8.163894653320312,
+        "spectral_flatness_reduction": -0.01407631579786539,
+        "score": 0.09180526733398436
+      },
+      {
+        "file": "15",
+        "snr_improvement_db": 6.661712646484375,
+        "spectral_flatness_reduction": -0.05427289754152298,
+        "score": 0.8330856323242187
+      },
+      {
+        "file": "18",
+        "snr_improvement_db": 6.5112762451171875,
+        "spectral_flatness_reduction": -0.08004871755838394,
+        "score": 0.8255638122558594
+      },
+      {
+        "file": "22",
+        "snr_improvement_db": 5.886974334716797,
+        "spectral_flatness_reduction": -0.06457768380641937,
+        "score": 0.7943487167358398
+      },
+      {
+        "file": "12",
+        "snr_improvement_db": 6.2630615234375,
+        "spectral_flatness_reduction": -0.05018603056669235,
+        "score": 0.813153076171875
+      },
+      {
+        "file": "3t",
+        "snr_improvement_db": 8.795476913452148,
+        "spectral_flatness_reduction": 0.14657457172870636,
+        "score": 0.9397738456726075
+      },
+      {
+        "file": "15t",
+        "snr_improvement_db": 9.435356140136719,
+        "spectral_flatness_reduction": 0.15518519282341003,
+        "score": 0.971767807006836
+      },
+      {
+        "file": "7t",
+        "snr_improvement_db": 9.13442611694336,
+        "spectral_flatness_reduction": 0.16170716285705566,
+        "score": 0.956721305847168
+      },
+      {
+        "file": "18t",
+        "snr_improvement_db": 5.835487365722656,
+        "spectral_flatness_reduction": 0.003895909059792757,
+        "score": 0.7917743682861328
+      },
+      {
+        "file": "21t",
+        "snr_improvement_db": 7.5324249267578125,
+        "spectral_flatness_reduction": 0.05027485266327858,
+        "score": 0.8766212463378906
+      },
+      {
+        "file": "4t",
+        "snr_improvement_db": 8.798406600952148,
+        "spectral_flatness_reduction": 0.1167685016989708,
+        "score": 0.9399203300476074
+      },
+      {
+        "file": "8t",
+        "snr_improvement_db": 9.098873138427734,
+        "spectral_flatness_reduction": 0.11725810170173645,
+        "score": 0.9549436569213867
+      },
+      {
+        "file": "23t",
+        "snr_improvement_db": 5.990638732910156,
+        "spectral_flatness_reduction": 0.12471931427717209,
+        "score": 0.7995319366455078
+      },
+      {
+        "file": "9t",
+        "snr_improvement_db": 8.811540603637695,
+        "spectral_flatness_reduction": 0.12420857697725296,
+        "score": 0.9405770301818848
+      },
+      {
+        "file": "28t",
+        "snr_improvement_db": 9.033557891845703,
+        "spectral_flatness_reduction": -0.038446616381406784,
+        "score": 0.9516778945922851
+      },
+      {
+        "file": "20t",
+        "snr_improvement_db": 6.242256164550781,
+        "spectral_flatness_reduction": 0.047516752034425735,
+        "score": 0.8121128082275391
+      },
+      {
+        "file": "13t",
+        "snr_improvement_db": 9.401256561279297,
+        "spectral_flatness_reduction": 0.02696036919951439,
+        "score": 0.9700628280639648
+      },
+      {
+        "file": "25t",
+        "snr_improvement_db": 8.786476135253906,
+        "spectral_flatness_reduction": -0.016911493614315987,
+        "score": 0.9393238067626953
+      },
+      {
+        "file": "1t",
+        "snr_improvement_db": 8.734460830688477,
+        "spectral_flatness_reduction": 0.12634232640266418,
+        "score": 0.9367230415344239
+      },
+      {
+        "file": "14t",
+        "snr_improvement_db": 9.75595474243164,
+        "spectral_flatness_reduction": 0.08445129543542862,
+        "score": 0.987797737121582
+      },
+      {
+        "file": "6t",
+        "snr_improvement_db": 9.435794830322266,
+        "spectral_flatness_reduction": 0.09993808716535568,
+        "score": 0.9717897415161133
+      },
+      {
+        "file": "10t",
+        "snr_improvement_db": 8.547843933105469,
+        "spectral_flatness_reduction": -0.01886468380689621,
+        "score": 0.9273921966552734
+      },
+      {
+        "file": "11t",
+        "snr_improvement_db": 9.17512321472168,
+        "spectral_flatness_reduction": 0.07978010922670364,
+        "score": 0.9587561607360839
+      },
+      {
+        "file": "30t",
+        "snr_improvement_db": 9.836978912353516,
+        "spectral_flatness_reduction": 0.19285011291503906,
+        "score": 0.9918489456176758
+      },
+      {
+        "file": "19t",
+        "snr_improvement_db": 6.987813949584961,
+        "spectral_flatness_reduction": 0.09975095838308334,
+        "score": 0.849390697479248
+      },
+      {
+        "file": "17t",
+        "snr_improvement_db": 9.735687255859375,
+        "spectral_flatness_reduction": 0.17562225461006165,
+        "score": 0.9867843627929688
+      },
+      {
+        "file": "31t",
+        "snr_improvement_db": 9.935266494750977,
+        "spectral_flatness_reduction": 0.17868734896183014,
+        "score": 0.9967633247375488
+      },
+      {
+        "file": "27t",
+        "snr_improvement_db": 8.60338020324707,
+        "spectral_flatness_reduction": -0.18075017631053925,
+        "score": 0.9301690101623535
+      },
+      {
+        "file": "12t",
+        "snr_improvement_db": 9.89712905883789,
+        "spectral_flatness_reduction": 0.10649140924215317,
+        "score": 0.9948564529418945
+      },
+      {
+        "file": "26t",
+        "snr_improvement_db": 8.933464050292969,
+        "spectral_flatness_reduction": -0.21260307729244232,
+        "score": 0.9466732025146485
+      },
+      {
+        "file": "33t",
+        "snr_improvement_db": 9.150604248046875,
+        "spectral_flatness_reduction": 0.18956291675567627,
+        "score": 0.9575302124023437
+      },
+      {
+        "file": "5t",
+        "snr_improvement_db": 9.062984466552734,
+        "spectral_flatness_reduction": 0.06503793597221375,
+        "score": 0.9531492233276367
+      },
+      {
+        "file": "2t",
+        "snr_improvement_db": 8.711111068725586,
+        "spectral_flatness_reduction": 0.07943283021450043,
+        "score": 0.9355555534362793
+      },
+      {
+        "file": "24t",
+        "snr_improvement_db": 8.958169937133789,
+        "spectral_flatness_reduction": -0.07116102427244186,
+        "score": 0.9479084968566894
+      },
+      {
+        "file": "32t",
+        "snr_improvement_db": 9.90673828125,
+        "spectral_flatness_reduction": 0.24799701571464539,
+        "score": 0.9953369140625
+      },
+      {
+        "file": "16t",
+        "snr_improvement_db": 9.360191345214844,
+        "spectral_flatness_reduction": 0.12533438205718994,
+        "score": 0.9680095672607422
+      },
+      {
+        "file": "22t",
+        "snr_improvement_db": 7.99102783203125,
+        "spectral_flatness_reduction": 0.15177199244499207,
+        "score": 0.8995513916015625
+      },
+      {
+        "file": "29t",
+        "snr_improvement_db": 9.666221618652344,
+        "spectral_flatness_reduction": 0.24270272254943848,
+        "score": 0.9833110809326172
+      }
+    ]
+  }
+}
