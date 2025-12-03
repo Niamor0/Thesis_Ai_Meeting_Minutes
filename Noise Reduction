@@ -1,0 +1,52 @@
+class AudioPreprocessor:
+    """Handle audio file conversion and noise reduction"""
+    
+    def __init__(self, config: Config):
+        self.config = config
+        self._check_dependencies()
+    
+    def _check_dependencies(self):
+        """Check if required tools are installed"""
+        try:
+            import soundfile
+            import librosa
+            import noisereduce
+        except ImportError as e:
+            logger.error(f"Missing dependency: {e}")
+            logger.info("Install with: pip install soundfile librosa noisereduce")
+            sys.exit(1)
+    
+    def process_audio(self, audio_path: Path) -> Tuple[Path, bool]:
+        """Convert audio to mono 16kHz WAV and apply noise reduction"""
+        import soundfile as sf
+        import librosa
+        import noisereduce as nr
+        
+        try:
+            logger.info(f"Processing: {audio_path.name}")
+            
+            # Load audio (mono, 16 kHz)
+            audio, sr = librosa.load(
+                str(audio_path),
+                sr=self.config.SAMPLE_RATE,
+                mono=True
+            )
+            
+            # Apply noise reduction
+            audio_denoised = nr.reduce_noise(
+                y=audio,
+                sr=sr,
+                stationary=True,
+                prop_decrease=0.8
+            )
+            
+            # Save preprocessed audio
+            output_path = self.config.TEMP_DIR / f"{audio_path.stem}_preprocessed.wav"
+            sf.write(str(output_path), audio_denoised, sr, subtype='PCM_16')
+            
+            logger.info(f"✓ Preprocessed: {output_path.name}")
+            return output_path, True
+            
+        except Exception as e:
+            logger.error(f"✗ Failed to process {audio_path.name}: {e}")
+            return None, False
