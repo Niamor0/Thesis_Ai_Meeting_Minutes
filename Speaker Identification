@@ -1,0 +1,221 @@
+from pathlib import Path
+from typing import List, Dict
+
+class SpeakerDiarizer:
+    """Detect and separate speakers"""
+
+    def __init__(self, config: Config):
+        self.config = config
+        self.device = self._get_device()
+        self.pipeline = None           # pyannote pipeline (if available)
+        self.vad_model = None          # Silero VAD model
+        self.get_speech_timestamps = None
+        self.speaker_model = None      # ECAPA speaker encoder
+        self._load_models()
+
+    # ---------- Device selection ----------
+
+    def _get_device(self):
+        """Get computation device"""
+        import torch
+        if torch.cuda.is_available():
+            logger.info("Using GPU for diarization")
+            return "cuda"
+        else:
+            logger.info("Using CPU for diarization")
+            return "cpu"
+
+    # ---------- Model loading ----------
+
+    def _load_models(self):
+        """Load VAD and diarization models"""
+        import torch
+
+        # 1) Try pyannote diarization first
+        try:
+            from pyannote.audio import Pipeline
+
+            if not self.config.HF_TOKEN:
+                raise RuntimeError("HF_TOKEN not set for pyannote.")
+
+            logger.info("Loading pyannote diarization pipeline...")
+            self.pipeline = Pipeline.from_pretrained(
+                self.config.SPEAKER_MODEL,
+                use_auth_token=self.config.HF_TOKEN  # or auth_token=self.config.HF_TOKEN
+            )
+            self.pipeline.to(self.device)
+            logger.info("✓ Loaded pyannote diarization model")
+
+        except Exception as e:
+            logger.warning(f"pyannote diarization unavailable: {e}")
+            self.pipeline = None
+
+        # 2) Always prepare Silero VAD + ECAPA as fallback
+        logger.info("Loading Silero VAD + ECAPA embeddings...")
+        self.vad_model, vad_utils = torch.hub.load(
+            'snakers4/silero-vad',
+            'silero_vad',
+            force_reload=False,
+            trust_repo=True
+        )
+        self.vad_model = self.vad_model.to(torch.device(self.device))
+        self.get_speech_timestamps = vad_utils[0]
+
+        from speechbrain.inference.speaker import EncoderClassifier
+        self.speaker_model = EncoderClassifier.from_hparams(
+            source="speechbrain/spkrec-ecapa-voxceleb",
+            savedir="pretrained_models/spkrec-ecapa-voxceleb",
+            run_opts={"device": self.device}
+        )
+        logger.info("✓ Loaded Silero VAD + ECAPA")
+
+    # ---------- Public API ----------
+
+    def diarize(self, audio_path: Path) -> List[Dict]:
+        """
+        Run speaker diarization on a preprocessed audio file.
+
+        Returns:
+            List[Dict]: [
+                {"speaker": "Speaker 1", "start": 0.0, "end": 2.5},
+                ...
+            ]
+        """
+        # Try pyannote first
+        if self.pipeline is not None:
+            try:
+                logger.info("Running pyannote diarization...")
+                return self._diarize_pyannote(audio_path)
+            except Exception as e:
+                logger.warning(f"pyannote failed: {e}, falling back to VAD+ECAPA")
+
+        # Fallback to VAD + ECAPA
+        logger.info("Running Silero VAD + ECAPA diarization...")
+        return self._diarize_vad_ecapa(audio_path)
+
+    # ---------- Method 1: pyannote diarization ----------
+
+    def _diarize_pyannote(self, audio_path: Path) -> List[Dict]:
+        """Diarize using pyannote pipeline"""
+        diarization = self.pipeline(str(audio_path))
+
+        segments: List[Dict] = []
+        speaker_map: Dict[str, str] = {}
+        next_id = 1
+
+        for turn, _, speaker in diarization.itertracks(yield_label=True):
+            if speaker not in speaker_map:
+                speaker_map[speaker] = f"Speaker {next_id}"
+                next_id += 1
+
+            segments.append({
+                "speaker": speaker_map[speaker],
+                "start": float(turn.start),
+                "end": float(turn.end)
+            })
+
+        logger.info(
+            f"✓ pyannote detected {len(speaker_map)} speakers, {len(segments)} segments"
+        )
+        return segments
+
+    # ---------- Method 2: Silero VAD + ECAPA ----------
+
+    def _diarize_vad_ecapa(self, audio_path: Path) -> List[Dict]:
+        """Diarize using Silero VAD + ECAPA clustering"""
+        import torch
+        import numpy as np
+        import soundfile as sf
+        from sklearn.cluster import AgglomerativeClustering
+        from sklearn.metrics import silhouette_score
+
+        # Read audio
+        audio, sr = sf.read(str(audio_path), dtype="float32")
+        if audio.ndim > 1:
+            audio = audio.mean(axis=1)
+
+        # Run VAD
+        audio_tensor = torch.tensor(audio, dtype=torch.float32, device=self.device)
+        speech_timestamps = self.get_speech_timestamps(
+            audio_tensor,
+            self.vad_model,
+            sampling_rate=sr,
+            threshold=0.5,
+            min_speech_duration_ms=int(self.config.MIN_SPEECH_DURATION * 1000),
+            min_silence_duration_ms=int(self.config.MIN_SILENCE_DURATION * 1000),
+        )
+
+        if not speech_timestamps:
+            logger.warning("No speech detected")
+            return []
+
+        # Extract embeddings per VAD segment
+        embeddings = []
+        chunks = []  # (start_sec, end_sec)
+        for ts in speech_timestamps:
+            start_sample = ts["start"]
+            end_sample = ts["end"]
+            start_sec = start_sample / sr
+            end_sec = end_sample / sr
+
+            # Drop extremely tiny chunks
+            if end_sec - start_sec < self.config.MIN_SPEECH_DURATION:
+                continue
+
+            chunk = audio[start_sample:end_sample]
+            chunk_tensor = torch.tensor(
+                chunk, dtype=torch.float32, device=self.device
+            ).unsqueeze(0)
+
+            with torch.no_grad():
+                emb = self.speaker_model.encode_batch(chunk_tensor)
+            emb = emb.squeeze().cpu().numpy()
+
+            embeddings.append(emb)
+            chunks.append((start_sec, end_sec))
+
+        if not embeddings:
+            logger.warning("No valid speech chunks for speaker embeddings")
+            return []
+
+        X = np.stack(embeddings)
+
+        # Choose number of speakers (2–5) by silhouette score
+        best_k = 2
+        best_score = -1.0
+        max_k = min(6, len(X))  # can't have more clusters than samples
+
+        for k in range(2, max_k + 1):
+            clustering = AgglomerativeClustering(
+                n_clusters=k, affinity="cosine", linkage="average"
+            )
+            labels = clustering.fit_predict(X)
+
+            # If all labels same, skip
+            if len(set(labels)) < 2:
+                continue
+
+            score = silhouette_score(X, labels, metric="cosine")
+            if score > best_score:
+                best_score = score
+                best_k = k
+
+        # Final clustering with best_k
+        clustering = AgglomerativeClustering(
+            n_clusters=best_k, affinity="cosine", linkage="average"
+        )
+        final_labels = clustering.fit_predict(X)
+
+        # Build segments list
+        segments: List[Dict] = []
+        for (start_sec, end_sec), label in zip(chunks, final_labels):
+            segments.append({
+                "speaker": f"Speaker {int(label) + 1}",
+                "start": float(start_sec),
+                "end": float(end_sec),
+            })
+
+        logger.info(
+            f"✓ VAD+ECAPA detected {best_k} speakers, {len(segments)} segments"
+        )
+        return segments
