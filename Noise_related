@@ -1,0 +1,24 @@
+import librosa
+import soundfile as sf
+import noisereduce as nr
+from pathlib import Path
+
+def noise_reduce_file(input_path: str, output_path: str, sample_rate: int = 16000):
+    """Load audio, apply noise reduction, save cleaned WAV."""
+    input_path = Path(input_path)
+    output_path = Path(output_path)
+
+    # Load audio (mono, resampled)
+    audio, sr = librosa.load(str(input_path), sr=sample_rate, mono=True)
+
+    # Noise reduction
+    audio_denoised = nr.reduce_noise(
+        y=audio,
+        sr=sr,
+        stationary=True,
+        prop_decrease=0.8,
+    )
+
+    # Save
+    sf.write(str(output_path), audio_denoised, sample_rate, subtype="PCM_16")
+    return output_path
